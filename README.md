@@ -7,6 +7,16 @@ Aplikasi manajemen pegawai berbasis web yang dibangun menggunakan framework Lara
 - Relasi antara user dan pegawai
 - Dashboard admin
 
+## Tujuan Pembelajaran
+
+Proyek ini dibuat untuk mempelajari dan memahami:
+- Implementasi CRUD (Create, Read, Update, Delete) di Laravel
+- Relasi antar tabel database (One-to-One, One-to-Many)
+- Implementasi autentikasi dan otorisasi
+- Penggunaan template admin (Mantis)
+- Integrasi DataTables untuk manajemen data
+- Best practices dalam pengembangan aplikasi Laravel
+
 ## Struktur Database
 
 ### Tabel Users
@@ -83,6 +93,37 @@ php artisan migrate
 ```bash
 php artisan serve
 ```
+
+## Sumber Belajar
+
+Beberapa sumber yang digunakan dalam pengembangan proyek ini:
+- [Laravel Documentation](https://laravel.com/docs)
+- [Laravel Bootcamp](https://bootcamp.laravel.com)
+- [DataTables Documentation](https://datatables.net/manual/)
+- [Bootstrap Documentation](https://getbootstrap.com/docs)
+
+## Pengembangan Selanjutnya
+
+Beberapa fitur yang bisa ditambahkan ke depannya:
+- [ ] Manajemen Jabatan
+- [ ] Manajemen Departemen
+- [ ] Sistem Absensi
+- [ ] Laporan Kepegawaian
+- [ ] Export Data ke Excel/PDF
+- [ ] Notifikasi Email
+- [ ] API untuk Mobile App
+
+## Catatan Pembelajaran
+
+Beberapa hal penting yang dipelajari dalam proyek ini:
+1. Penggunaan Eloquent Relationships
+2. Implementasi Middleware untuk Autentikasi
+3. Penggunaan Resource Controllers
+4. Form Validation
+5. Flash Messages
+6. Database Seeding
+7. Blade Templating
+8. Asset Management
 
 ## Lisensi
 
