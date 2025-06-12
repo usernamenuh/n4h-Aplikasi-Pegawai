@@ -10,11 +10,10 @@ use App\Models\User;
 class PegawaiController extends Controller
 {
     public function index()
-    {
-        $pegawai = pegawai::all();
-        
-        return view('pegawai.index' , compact('pegawai'));
-    }
+{
+    $pegawai = pegawai::with('user')->get();
+    return view('pegawai.index', compact('pegawai'));
+}
 
     public function create()
     {

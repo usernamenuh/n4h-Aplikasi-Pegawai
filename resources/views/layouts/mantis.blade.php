@@ -67,7 +67,7 @@
           <i class="ti ti-dashboard"></i>
         </li>
         <li class="pc-item">
-          <a href="../elements/bc_typography.html" class="pc-link">
+          <a href="{{ route('pegawai.index') }}" class="pc-link">
             <span class="pc-micon"><i class="ti ti-typography"></i></span>
             <span class="pc-mtext">Typography</span>
           </a>
