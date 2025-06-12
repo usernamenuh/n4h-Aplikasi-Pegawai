@@ -19,4 +19,8 @@ class pegawai extends Model
     {
         return $this->hasOne(User::class, 'pegawais_id');
     }
+
+    public function bagian() {
+        return $this->belongsTo(Bagian::class);
+    }
 }
