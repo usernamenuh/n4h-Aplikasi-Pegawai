@@ -16,6 +16,7 @@
                     <tr>
                         <th>NO</th>
                         <th>Nama</th>
+                        <th>Bagian</th>
                         <th>Email</th>
                         <th>Jabatan</th>
                         <th>Alamat</th>
@@ -28,6 +29,9 @@
                     <tr>
                         <td> {{ $index + 1 }}</td>
                         <td> {{ $item->name }}</td>
+                        <td>
+    {{ $item->bagian ? $item->bagian->name : '-' }}
+</td>
                         <td> {{ $item->user->email }}</td>
                         <td> {{ $item->jabatan }}</td>
                         <td> {{ $item->alamat }}</td>

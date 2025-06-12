@@ -13,6 +13,7 @@ class pegawai extends Model
         'jabatan',
         'alamat',
         'jenis_kelamin',
+        'bagian_id',
     ];
 
     public function user()
@@ -21,6 +22,6 @@ class pegawai extends Model
     }
 
     public function bagian() {
-        return $this->belongsTo(Bagian::class);
+        return $this->belongsTo(bagian::class);
     }
 }

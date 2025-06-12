@@ -6,18 +6,22 @@ use Database\Seeders\PegawaiSeeder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use App\Models\bagian;
 
 class PegawaiController extends Controller
 {
     public function index()
 {
-    $pegawai = pegawai::with('user')->get();
-    return view('pegawai.index', compact('pegawai'));
+    $pegawai = pegawai::with('user', 'bagian')->get();
+    $bagians = bagian::all();
+    return view('pegawai.index', compact('pegawai', 'bagians'));
 }
 
     public function create()
     {
-        return view('pegawai.create');
+        $pegawai = Pegawai::with('user')->get();
+        $bagians = bagian::all();
+        return view('pegawai.create', compact('pegawai', 'bagians'));
     }
 
     public function store(Request $request)
@@ -28,6 +32,7 @@ class PegawaiController extends Controller
         'jabatan' => 'required',
         'alamat' => 'required',
         'jenis_kelamin' => 'required|in:Laki-Laki,Perempuan',
+        'bagian_id'=> 'required|exists:bagians,id',
      ], [
         'name.required' => 'Nama pegawai tidak boleh kosong',
         'email.required' => 'Email pegawai tidak boleh kosong',
@@ -37,6 +42,7 @@ class PegawaiController extends Controller
         'alamat.required' => 'Alamat pegawai tidak boleh kosong',
         'jenis_kelamin.required' => 'Jenis kelamin pegawai tidak boleh kosong',
         'jenis_kelamin.in' => 'Jenis kelamin pegawai harus Laki-Laki atau Perempuan',
+        'bagian_id.required' => 'Bagian pegawai tidak boleh kosong',
      ]);
 
      $new = Pegawai::create($request->all());
@@ -57,7 +63,8 @@ class PegawaiController extends Controller
     public function edit(String $id)
     {
         $pegawai = pegawai::find($id);
-        return view('pegawai.edit', compact('pegawai'));
+        $bagians = bagian::all(); // ambil semua bagian
+        return view('pegawai.edit', compact('pegawai', 'bagians'));
     }
 
     public function update(Request $request, Pegawai $pegawai) {

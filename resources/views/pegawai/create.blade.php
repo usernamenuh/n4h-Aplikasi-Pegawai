@@ -25,6 +25,22 @@
                 @enderror
             </div>
             <div class="form-grup my-2">
+                <label for="bagian_id">Bagian</label>
+                <select name="bagian_id" id="bagian_id" class="form-control @error('bagian_id')
+                is-invalid
+                @enderror">
+                    <option value="">Pilih Bagian</option>
+                    @foreach ($bagians as $bagian)
+                        <option value="{{ $bagian->id }}" {{ old('bagian_id') == $bagian->id ? 'selected' : '' }}>
+                            {{ $bagian->name }}
+                        </option>
+                    @endforeach
+                </select>
+                @error('bagian_id')
+                <small class="text-danger">{{ $message }}</small>
+                @enderror
+            </div>
+            <div class="form-grup my-2">
                 <label for="email">Email</label>
                 <input type="text" name="email" id="email" class="form-control @error('email')
                 is-invalid

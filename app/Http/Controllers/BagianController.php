@@ -13,8 +13,8 @@ class BagianController extends Controller
         return view('bagian.index', compact('bagian'));
     }
 
-    public function show() {
-        $bagian = bagian::all();
+    public function show($id) {
+        $bagian = bagian::findOrFail($id);
         return view('bagian.show', compact('bagian'));
     }
 }
