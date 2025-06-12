@@ -63,13 +63,19 @@
         </li>
 
         <li class="pc-item pc-caption">
-          <label>UI Components</label>
-          <i class="ti ti-dashboard"></i>
+          <label>Data</label>
+          <i class="ti ti-database"></i>
         </li>
         <li class="pc-item">
           <a href="{{ route('pegawai.index') }}" class="pc-link">
-            <span class="pc-micon"><i class="ti ti-typography"></i></span>
-            <span class="pc-mtext">Typography</span>
+            <span class="pc-micon"><i class="ti ti-user"></i></span>
+            <span class="pc-mtext">Pegawai</span>
+          </a>
+        </li>
+        <li class="pc-item">
+          <a href="{{ route('bagian.index') }}" class="pc-link">
+            <span class="pc-micon"><i class="ti ti-building"></i></span>
+            <span class="pc-mtext">Bagian</span>
           </a>
         </li>
       </ul>

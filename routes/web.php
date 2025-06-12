@@ -8,6 +8,7 @@ Route::get('/', function () {
 });
 
 Route::resource('pegawai', App\Http\Controllers\PegawaiController::class);
+Route::resource('bagian', App\Http\Controllers\BagianController::class);
 
 Auth::routes();
 

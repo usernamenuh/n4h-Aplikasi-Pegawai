@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Bagian;
+use App\Models\bagian;
 
 class BagianSeeder extends Seeder
 {
@@ -16,8 +16,8 @@ class BagianSeeder extends Seeder
         $bagian = ['produksi', 'penjualan', 'pengembangan', 'keuangan', 'pemasaran', 'keamanan', 'pengembangan', 'keuangan', 'pemasaran', 'keamanan'];
 
         foreach ($bagian as $b) {
-            Bagian::create([
-                'name' => $bagian,
+            bagian::create([
+                'name' => $b
             ]);
         }
     }
